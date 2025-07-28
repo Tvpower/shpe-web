@@ -9,7 +9,7 @@ git clone https://github.com/adriancancode/shpe_csuf_website.git
 ```
 After cloning the repository, move into the repository, install all node dependencies, and run the development server.
 ```bash
-cd shpe_csuf_website
+cd shpe-web
 npm i/install
 npm run dev
 ```
