@@ -62,29 +62,84 @@ export default function SHPELanding() {
 
   const leadership = [
     {
-      name: "Sofia Morales",
-      role: "Chapter President",
+      name: "David Monterrosa",
+      role: "President  |  SHPE",
       image: "/placeholder-user.jpg",
-      bio: "Computer Engineering Senior at CSUF, Intern at Boeing"
+      bio: "Electrical Engineering Senior"
     },
     {
-      name: "David Gutierrez",
-      role: "Vice President",
+      name: "Jeffery Camacho-Osorio",
+      role: "Internal Vice President  |  SHPE",
       image: "/placeholder-user.jpg",
-      bio: "Mechanical Engineering Junior, Research Assistant"
+      bio: "Mechanical Engineering Senior"
     },
     {
-      name: "Isabella Santos",
-      role: "Secretary",
+      name: "Ruben Marquez",
+      role: "External Vice President  |  SHPE",
       image: "/placeholder-user.jpg",
-      bio: "Electrical Engineering Senior, NASA USRP Intern"
+      bio: "Computer Engineering Sophomore"
     },
     {
-      name: "Miguel Ramirez",
-      role: "Treasurer",
+      name: "Ian Nguyen",
+      role: "Secretary  |  SHPE",
       image: "/placeholder-user.jpg",
-      bio: "Civil Engineering Senior, Caltrans Intern"
-    }
+      bio: "Civil Engineering Senior"
+    },
+    {
+      name: "Matthew Flores",
+      role: "Treasurer  |  SHPE",
+      image: "/placeholder-user.jpg",
+      bio: "Mechanical Engineering Senior"
+    },
+    {
+      name: "Estrella Rivera",
+      role: "Director of Events  |  SHPE",
+      image: "/placeholder-user.jpg",
+      bio: "Mechanical Engineering Junior"
+    },
+    {
+      name: "Emmanuel Barriga",
+      role: "Co-Director of Events  |  SHPE",
+      image: "/placeholder-user.jpg",
+      bio: "Civil Engineering Senior"
+    },
+    {
+      name: "Adrian Vazquez",
+      role: "Director of Marketing/Webmaster  |  SHPE",
+      image: "/placeholder-user.jpg",
+      bio: "Computer Science Senior"
+    },
+    {
+      name: "Michelle Pineda",
+      role: "Director  |  SHPEtinas",
+      image: "/placeholder-user.jpg",
+      bio: "Computer Science Senior"
+    },
+    {
+      name: "Brianna Bahena",
+      role: "Co-Director  |  SHPEtinas",
+      image: "/placeholder-user.jpg",
+      bio: "Computer Science Sophomore"
+    },
+    {
+      name: "Cristal Santos",
+      role: "Secretary  |  SHPEtinas",
+      image: "/placeholder-user.jpg",
+      bio: "Computer Science Senior"
+    },
+    {
+      name: "Jaylin Mai",
+      role: "Treasure  |  SHPEtinas",
+      image: "/placeholder-user.jpg",
+      bio: "Electrical Engineering Senior"
+    },
+    {
+      name: "Daisy Martinez",
+      role: "Historian/Public Relations  |  SHPEtinas",
+      image: "/placeholder-user.jpg",
+      bio: "Computer Science Senior"
+    },
+    
   ]
 
   const events = [
@@ -120,7 +175,11 @@ export default function SHPELanding() {
       <section className="min-h-screen bg-gradient-to-br from-teal-600 to-teal-800 text-white relative overflow-hidden">
         {/* Navigation */}
         <nav className="flex items-center justify-between p-6 relative z-10">
-          <div className="text-2xl font-bold text-white">SHPE</div>
+          <div className="text-2xl font-bold text-white">
+            <Link href="/">
+              SHPE
+            </Link>
+          </div>
           <div className="hidden md:flex space-x-8">
             <Link href="#about" className="hover:text-orange-300 transition-colors">
               About
@@ -138,7 +197,7 @@ export default function SHPELanding() {
               Contact
             </Link>
           </div>
-          <Button variant="outline" className="border-white text-white hover:bg-white hover:text-teal-800">
+          <Button variant="outline" className="border-white text-teal-800 hover:bg-teal-600 hover:text-white">
             Join Now
           </Button>
         </nav>
@@ -198,9 +257,12 @@ export default function SHPELanding() {
 
           <ScrollReveal direction="up" delay={1.0}>
             <div className="mt-12 flex flex-col sm:flex-row gap-4">
-              <MagneticButton className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                Become a Member
-              </MagneticButton>
+              <a href="https://discord.gg/cXNeAGzy" target="_blank" rel="noopener noreferrer">
+                <MagneticButton className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                  Become a Member
+                </MagneticButton>
+              </a>
+              
               <MagneticButton className="border border-white text-white hover:bg-white hover:text-teal-800 px-8 py-3 rounded-lg font-semibold transition-colors">
                 Learn More
               </MagneticButton>
@@ -512,7 +574,7 @@ export default function SHPELanding() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="h-6 w-6 text-orange-400" />
-                  <span>shpe.csuf@gmail.com</span>
+                  <span>csufshpe@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <School className="h-6 w-6 text-orange-400" />
@@ -527,15 +589,14 @@ export default function SHPELanding() {
               <div className="mt-8">
                 <h4 className="text-xl font-semibold mb-4">Follow Us</h4>
                 <div className="flex space-x-4">
-                  <Button variant="outline" size="sm" className="border-white text-white hover:bg-white hover:text-teal-900">
+                  <Button variant="outline" size="sm" className="border-white text-teal-900 hover:bg-teal-900 hover:text-white">
                     LinkedIn
                   </Button>
-                  <Button variant="outline" size="sm" className="border-white text-white hover:bg-white hover:text-teal-900">
-                    Instagram
-                  </Button>
-                  <Button variant="outline" size="sm" className="border-white text-white hover:bg-white hover:text-teal-900">
-                    Facebook
-                  </Button>
+                  <a href="https://www.instagram.com/shpe_csuf/?next=%2F" target="_blank" rel="noopener noreferrer">
+                    <Button variant="outline" size="sm" className="border-white text-teal-900 hover:bg-teal-900 hover:text-white">
+                      Instagram
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -594,7 +655,7 @@ export default function SHPELanding() {
             <div>
               <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-gray-400">
-                <li>shpe.csuf@gmail.com</li>
+                <li>csufshpe@gmail.com</li>
                 <li>Cal State Fullerton</li>
                 <li>800 N State College Blvd</li>
                 <li>Fullerton, CA 92831</li>
@@ -603,7 +664,7 @@ export default function SHPELanding() {
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Society of Hispanic Professional Engineers. All rights reserved.</p>
+            <p>&copy; 2025 Society of Hispanic Professional Engineers. All rights reserved.</p>
           </div>
         </div>
       </footer>
