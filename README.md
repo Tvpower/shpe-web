@@ -1,7 +1,8 @@
+![SHPE Logo](public/shpe-logo.webp)
 # SHPE @ CSUF 
 Official Website of Society of Hispanic Professional Engineers (SHPE), CSUF Chapter.
 
-## Contribute
+## Contributing
 If you want to make contributions to this site, please ensure you have [Node.js installed on your device][nodejs_download].
 Then clone this repository using the below command:
 ```bash
