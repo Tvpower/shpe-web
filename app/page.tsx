@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
+import EventsSection from "@/components/eventsSection"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -144,27 +144,7 @@ export default function SHPELanding() {
     
   ]
 
-  const events = [
-    {
-      title: "CSUF Engineering Career Fair",
-      date: "February 20, 2024",
-      location: "Titan Student Union, CSUF",
-      description: "Connect with Orange County employers and explore career opportunities with our industry partners."
-    },
-    {
-      title: "Noche de Ciencias Familiar",
-      date: "March 8, 2024",
-      location: "CSUF Engineering Building",
-      description: "Family science night bringing STEM education to the Fullerton community."
-    },
-    {
-      title: "Monthly Tech Talk Series",
-      date: "Every 2nd Friday",
-      location: "CSUF Campus & Virtual",
-      description: "Industry experts from Orange County tech companies share insights on latest technologies."
-    }
-  ]
-
+  
   return (
     <div className="min-h-screen">
       <ScrollProgress />
@@ -504,35 +484,7 @@ export default function SHPELanding() {
             </div>
           </ScrollReveal>
           
-          <HorizontalScroll className="pb-8">
-            <div className="flex space-x-8">
-              {events.map((event, index) => (
-                <ScrollReveal key={index} direction="up" delay={index * 0.2}>
-                  <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 min-w-[300px] h-full">
-                    <CardHeader>
-                      <div className="flex items-center space-x-2 text-teal-600 mb-2">
-                        <CalendarDays className="h-5 w-5" />
-                        <span className="font-medium">{event.date}</span>
-                      </div>
-                      <CardTitle className="text-xl">{event.title}</CardTitle>
-                      <div className="flex items-center space-x-2 text-gray-500">
-                        <MapPin className="h-4 w-4" />
-                        <span className="text-sm">{event.location}</span>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription className="text-gray-600 mb-4">
-                        {event.description}
-                      </CardDescription>
-                      <MagneticButton className="w-full bg-teal-600 hover:bg-teal-700 text-white py-2 px-4 rounded-lg font-medium transition-colors">
-                        Learn More
-                      </MagneticButton>
-                    </CardContent>
-                  </Card>
-                </ScrollReveal>
-              ))}
-            </div>
-          </HorizontalScroll>
+          <EventsSection />
         </div>
       </section>
 
