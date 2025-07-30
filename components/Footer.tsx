@@ -21,6 +21,7 @@ export default function Footer() {
               >
                 <Linkedin className="h-5 w-5" />
               </Button>
+              <a href="https://www.instagram.com/shpe_csuf/?next=%2F" target="_blank" rel="noopener noreferrer">
               <Button 
                 variant="ghost" 
                 size="icon" 
@@ -28,6 +29,8 @@ export default function Footer() {
               >
                 <Instagram className="h-5 w-5" />
               </Button>
+              </a>
+              
               <Button 
                 variant="ghost" 
                 size="icon" 
@@ -66,22 +69,20 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-400">
               <li className="flex items-center space-x-2">
                 <Mail className="h-4 w-4" />
-                <span>info@shpe.org</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Phone className="h-4 w-4" />
-                <span>(555) 123-4567</span>
+                <span>csufshpe@gmail.com</span>
               </li>
               <li className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4" />
-                <span>123 University Ave</span>
+                <span>Cal State Fullerton</span>
               </li>
+              <li>800 N State College Blvd</li>
+              <li>Fullerton, CA 92831</li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Society of Hispanic Professional Engineers. All rights reserved.</p>
+          <p>&copy; 2025 Society of Hispanic Professional Engineers. All rights reserved.</p>
         </div>
       </div>
     </footer>

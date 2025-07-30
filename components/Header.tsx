@@ -14,11 +14,10 @@ export default function Header({ variant = 'page' }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   const navItems = [
-    { href: "#about", label: "About" },
-    { href: "#programs", label: "Programs" },
-    { href: "#events", label: "Events" },
-    { href: "#leadership", label: "Leadership" },
-    { href: "#contact", label: "Contact" },
+    { href: "/about", label: "About" },
+    { href: "/programs", label: "Programs" },
+    { href: "/events", label: "Events" },
+    { href: "/leadership", label: "Leadership" }
   ]
 
   const isHero = variant === 'hero'
@@ -83,7 +82,7 @@ export default function Header({ variant = 'page' }: HeaderProps) {
         variant={isHero ? "outline" : "default"}
         className={`hidden md:inline-flex ${
           isHero 
-            ? 'border-white text-white hover:bg-white hover:text-teal-800' 
+            ? 'border-white text-teal-800 hover:bg-teal-600 hover:text-white' 
             : 'bg-teal-600 hover:bg-teal-700 text-white'
         }`}
       >

@@ -21,7 +21,7 @@ import {
   Shield
 } from "lucide-react"
 
-export default function MembershipPage() {
+export default function LeadershipPage() {
   const membershipTiers = [
     {
       name: "Student Member",

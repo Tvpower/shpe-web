@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import Header from "@/components/Header"
+import Footer from "@/components/Footer"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -174,33 +176,7 @@ export default function SHPELanding() {
       {/* Hero Section */}
       <section className="min-h-screen bg-gradient-to-br from-teal-600 to-teal-800 text-white relative overflow-hidden">
         {/* Navigation */}
-        <nav className="flex items-center justify-between p-6 relative z-10">
-          <div className="text-2xl font-bold text-white">
-            <Link href="/">
-              SHPE
-            </Link>
-          </div>
-          <div className="hidden md:flex space-x-8">
-            <Link href="#about" className="hover:text-orange-300 transition-colors">
-              About
-            </Link>
-            <Link href="#programs" className="hover:text-orange-300 transition-colors">
-              Programs
-            </Link>
-            <Link href="#events" className="hover:text-orange-300 transition-colors">
-              Events
-            </Link>
-            <Link href="#leadership" className="hover:text-orange-300 transition-colors">
-              Leadership
-            </Link>
-            <Link href="#contact" className="hover:text-orange-300 transition-colors">
-              Contact
-            </Link>
-          </div>
-          <Button variant="outline" className="border-white text-teal-800 hover:bg-teal-600 hover:text-white">
-            Join Now
-          </Button>
-        </nav>
+        <Header variant="hero"/>
 
         {/* Hero Content */}
         <div className="flex flex-col items-center justify-center min-h-[80vh] relative">
@@ -574,7 +550,7 @@ export default function SHPELanding() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="h-6 w-6 text-orange-400" />
-                  <span>csufshpe@gmail.com</span>
+                  <a href="mailto:csufshpe@gmail.com"><span className="ease-in-out duration-150 hover:text-orange-400">csufshpe@gmail.com</span></a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <School className="h-6 w-6 text-orange-400" />
@@ -624,50 +600,7 @@ export default function SHPELanding() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-4">SHPE</h3>
-              <p className="text-gray-400">
-                Empowering Hispanic professionals in STEM since 1974.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="#about" className="hover:text-white transition-colors">About</Link></li>
-                <li><Link href="#programs" className="hover:text-white transition-colors">Programs</Link></li>
-                <li><Link href="#events" className="hover:text-white transition-colors">Events</Link></li>
-                <li><Link href="#leadership" className="hover:text-white transition-colors">Leadership</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Resources</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="#" className="hover:text-white transition-colors">Scholarships</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">Career Center</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">Mentorship</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">Newsletter</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>csufshpe@gmail.com</li>
-                <li>Cal State Fullerton</li>
-                <li>800 N State College Blvd</li>
-                <li>Fullerton, CA 92831</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 Society of Hispanic Professional Engineers. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   )
 }
