@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import EventsSection from "@/components/eventsSection"
@@ -22,6 +23,7 @@ import {
   ScrollProgress,
   HorizontalScroll 
 } from "@/components/smooth-scroll"
+import leadership from "@/app/leadership/leadershipData" // Assuming you have a leadership data file
 
 export default function SHPELanding() {
   const [rotation, setRotation] = useState(0)
@@ -62,88 +64,7 @@ export default function SHPELanding() {
     { number: 92, label: "Graduate Rate", suffix: "%" }
   ]
 
-  const leadership = [
-    {
-      name: "David Monterrosa",
-      role: "President  |  SHPE",
-      image: "/placeholder-user.jpg",
-      bio: "Electrical Engineering Senior"
-    },
-    {
-      name: "Jeffery Camacho-Osorio",
-      role: "Internal Vice President  |  SHPE",
-      image: "/placeholder-user.jpg",
-      bio: "Mechanical Engineering Senior"
-    },
-    {
-      name: "Ruben Marquez",
-      role: "External Vice President  |  SHPE",
-      image: "/placeholder-user.jpg",
-      bio: "Computer Engineering Sophomore"
-    },
-    {
-      name: "Ian Nguyen",
-      role: "Secretary  |  SHPE",
-      image: "/placeholder-user.jpg",
-      bio: "Civil Engineering Senior"
-    },
-    {
-      name: "Matthew Flores",
-      role: "Treasurer  |  SHPE",
-      image: "/placeholder-user.jpg",
-      bio: "Mechanical Engineering Senior"
-    },
-    {
-      name: "Estrella Rivera",
-      role: "Director of Events  |  SHPE",
-      image: "/placeholder-user.jpg",
-      bio: "Mechanical Engineering Junior"
-    },
-    {
-      name: "Emmanuel Barriga",
-      role: "Co-Director of Events  |  SHPE",
-      image: "/placeholder-user.jpg",
-      bio: "Civil Engineering Senior"
-    },
-    {
-      name: "Adrian Vazquez",
-      role: "Director of Marketing/Webmaster  |  SHPE",
-      image: "/placeholder-user.jpg",
-      bio: "Computer Science Senior"
-    },
-    {
-      name: "Michelle Pineda",
-      role: "Director  |  SHPEtinas",
-      image: "/placeholder-user.jpg",
-      bio: "Computer Science Senior"
-    },
-    {
-      name: "Brianna Bahena",
-      role: "Co-Director  |  SHPEtinas",
-      image: "/placeholder-user.jpg",
-      bio: "Computer Science Sophomore"
-    },
-    {
-      name: "Cristal Santos",
-      role: "Secretary  |  SHPEtinas",
-      image: "/placeholder-user.jpg",
-      bio: "Computer Science Senior"
-    },
-    {
-      name: "Jaylin Mai",
-      role: "Treasure  |  SHPEtinas",
-      image: "/placeholder-user.jpg",
-      bio: "Electrical Engineering Senior"
-    },
-    {
-      name: "Daisy Martinez",
-      role: "Historian/Public Relations  |  SHPEtinas",
-      image: "/placeholder-user.jpg",
-      bio: "Computer Science Senior"
-    },
-    
-  ]
-
+  const firstThreeLeadership = leadership.slice(0, 3);
   
   return (
     <div className="min-h-screen">
@@ -441,8 +362,8 @@ export default function SHPELanding() {
             </div>
           </ScrollReveal>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {leadership.map((leader, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {firstThreeLeadership.map((leader, index) => (
               <ScrollReveal key={index} direction="up" delay={index * 0.1}>
                 <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 group">
                   <CardHeader>
@@ -464,6 +385,15 @@ export default function SHPELanding() {
               </ScrollReveal>
             ))}
           </div>
+          <ScrollReveal direction="up" delay={0.5}>
+            <div className="text-center mt-12">
+              <Link href="/leadership">
+                <Button className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-lg font-semibold inline-flex items-center gap-2 transition-all duration-300">
+                  Meet the Full Team
+                </Button>
+              </Link>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
