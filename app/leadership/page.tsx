@@ -136,71 +136,19 @@ export default function LeadershipPage() {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-r from-teal-600 to-teal-800 text-white">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl font-bold mb-6">Join SHPE</h1>
+          <h1 className="text-5xl font-bold mb-6">Leadership</h1>
           <p className="text-xl max-w-3xl mx-auto">
             Meet the faces behind SHPE's mission to empower Hispanic professionals in STEM.
           </p>
         </div>
       </section>
 
-      {/* Member Benefits */}
+      {/* Leadership Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <LeadershipList/>
-          {/* <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Join SHPE?</h2>
-            <p className="text-xl text-gray-600">Unlock opportunities and make lasting connections</p>
-          </div> */}
         </div>
       </section>
-
-      {/* FAQ Section */}
-      {/* <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-          </div>
-          
-          <div className="max-w-3xl mx-auto space-y-8">
-            <Card className="border-0 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-lg">Do I need to be Hispanic to join SHPE?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-700">
-                  No! SHPE welcomes anyone who supports our mission of empowering Hispanic professionals in STEM. 
-                  We believe diversity of thought and background strengthens our community.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-lg">Can I change my membership type later?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-700">
-                  Yes! You can upgrade or change your membership type at any time. Contact our membership team 
-                  for assistance with transitions between student and professional memberships.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-lg">What if I'm not currently in a STEM field but interested?</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-gray-700">
-                  SHPE supports career transitions and welcomes individuals exploring STEM fields. 
-                  Our programs can help you navigate your path into STEM careers.
-                </CardDescription>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section> */}
-
       <Footer />
     </div>
   )

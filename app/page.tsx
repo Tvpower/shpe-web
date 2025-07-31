@@ -138,13 +138,11 @@ export default function SHPELanding() {
             <div className="mt-12 flex flex-col sm:flex-row gap-4">
               <a href="https://discord.gg/cXNeAGzy" target="_blank" rel="noopener noreferrer">
                 <MagneticButton className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                  Become a Member
+                  Join Now!
                 </MagneticButton>
               </a>
               
-              <MagneticButton className="border border-white text-white hover:bg-white hover:text-teal-800 px-8 py-3 rounded-lg font-semibold transition-colors">
-                Learn More
-              </MagneticButton>
+              
             </div>
           </ScrollReveal>
         </div>
@@ -490,66 +488,49 @@ export default function SHPELanding() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-teal-900 text-white">
+      {/* FAQ Section */}
+      <section className="py-20 bg-teal-900 text-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Get In Touch</h2>
-            <p className="text-xl text-teal-100">Ready to join our community? We'd love to hear from you</p>
+            <h2 className="text-4xl font-bold text-white mb-4">Frequently Asked Questions</h2>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-6 w-6 text-orange-400" />
-                  <a href="mailto:csufshpe@gmail.com"><span className="ease-in-out duration-150 hover:text-orange-400">csufshpe@gmail.com</span></a>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <School className="h-6 w-6 text-orange-400" />
-                  <span>California State University, Fullerton</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <MapPin className="h-6 w-6 text-orange-400" />
-                  <span>800 N State College Blvd, Fullerton, CA</span>
-                </div>
-              </div>
-              
-              <div className="mt-8">
-                <h4 className="text-xl font-semibold mb-4">Follow Us</h4>
-                <div className="flex space-x-4">
-                  <Button variant="outline" size="sm" className="border-white text-teal-900 hover:bg-teal-900 hover:text-white">
-                    LinkedIn
-                  </Button>
-                  <a href="https://www.instagram.com/shpe_csuf/?next=%2F" target="_blank" rel="noopener noreferrer">
-                    <Button variant="outline" size="sm" className="border-white text-teal-900 hover:bg-teal-900 hover:text-white">
-                      Instagram
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <h3 className="text-2xl font-semibold mb-6">Send us a Message</h3>
-              <form className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <Input placeholder="First Name" className="bg-white/10 border-white/20 text-white placeholder:text-white/70" />
-                  <Input placeholder="Last Name" className="bg-white/10 border-white/20 text-white placeholder:text-white/70" />
-                </div>
-                <Input placeholder="Email" type="email" className="bg-white/10 border-white/20 text-white placeholder:text-white/70" />
-                <Input placeholder="Subject" className="bg-white/10 border-white/20 text-white placeholder:text-white/70" />
-                <Textarea 
-                  placeholder="Your message" 
-                  rows={5} 
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
-                />
-                <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">
-                  Send Message
-                </Button>
-              </form>
-            </div>
+          <div className="max-w-3xl mx-auto space-y-8">
+            <Card className="border-0 shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <CardHeader>
+                <CardTitle className="text-lg">Do I need to be Hispanic to join SHPE?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-gray-700">
+                  No! SHPE welcomes anyone who supports our mission of empowering Hispanic professionals in STEM. 
+                  We believe diversity of thought and background strengthens our community.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <CardHeader>
+                <CardTitle className="text-lg">How do I join SHPE at CSUF?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-gray-700">
+                  Once you click "Join Now" at the very top of the page and accept the invite to our Discord Server,
+                  you are officially a member of our SHPE CSUF chapter!
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+              <CardHeader>
+                <CardTitle className="text-lg">What if I'm not currently in a STEM field but interested?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-gray-700">
+                  SHPE supports career transitions and welcomes individuals exploring STEM fields. 
+                  Our programs can help you navigate your path into STEM careers.
+                </CardDescription>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
