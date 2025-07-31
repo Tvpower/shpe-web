@@ -22,22 +22,14 @@ export default function Footer() {
                 <Linkedin className="h-5 w-5" />
               </Button>
               <a href="https://www.instagram.com/shpe_csuf/?next=%2F" target="_blank" rel="noopener noreferrer">
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                className="text-gray-400 hover:text-white hover:bg-gray-800"
-              >
-                <Instagram className="h-5 w-5" />
-              </Button>
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="text-gray-400 hover:text-white hover:bg-gray-800"
+                >
+                  <Instagram className="h-5 w-5" />
+                </Button>
               </a>
-              
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                className="text-gray-400 hover:text-white hover:bg-gray-800"
-              >
-                <Facebook className="h-5 w-5" />
-              </Button>
             </div>
           </div>
 

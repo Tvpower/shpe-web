@@ -78,16 +78,19 @@ export default function Header({ variant = 'page' }: HeaderProps) {
       </Sheet>
 
       {/* Join Now Button */}
-      <Button 
-        variant={isHero ? "outline" : "default"}
-        className={`hidden md:inline-flex ${
-          isHero 
-            ? 'border-white text-teal-800 hover:bg-teal-600 hover:text-white' 
-            : 'bg-teal-600 hover:bg-teal-700 text-white'
-        }`}
-      >
-        Join Now
-      </Button>
+      <a href="https://discord.gg/cXNeAGzy" target="_blank" rel="noopener noreferrer">
+        <Button 
+          variant={isHero ? "outline" : "default"}
+          className={`hidden md:inline-flex ${
+            isHero 
+              ? 'border-white text-teal-800 hover:bg-teal-600 hover:text-white' 
+              : 'bg-teal-600 hover:bg-teal-700 text-white'
+          }`}
+        >
+          Join Now
+        </Button>
+      </a>
+      
     </nav>
   )
 } 
