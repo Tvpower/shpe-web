@@ -1,108 +1,117 @@
 'use client';
-
-import { useState, useEffect } from 'react';
+import React from "react";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
-import { CalendarDays, MapPin } from "lucide-react";
-import { MagneticButton, ScrollReveal } from './smooth-scroll';
-import eventsList from '@/app/events/eventsList'; // Assuming you have an events data file
+import {Tabs, TabsList, TabsTrigger, TabsContent} from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { CalendarDays, MapPin, Clock } from "lucide-react";
+import Image from 'next/image';
+import eventsData from '@/app/events/eventsList';
+
 
 export default function EventsSection() {
-  const [eventIndex, setEventIndex] = useState(0);
-
-  const nextEvent = () => {
-    const maxIndex = Math.max(0, eventsList.length - Math.floor(window.innerWidth / 320))
-    setEventIndex(prev => Math.min(prev + 1, maxIndex))
-  }
-  
-  const prevEvent = () => {
-    setEventIndex(prev => Math.max(prev - 1, 0))
-  }
-  
-  // Optional: Add keyboard navigation
-  useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') {
-        prevEvent()
-      } else if (e.key === 'ArrowRight') {
-        nextEvent()
-      }
-    }
-  
-    window.addEventListener('keydown', handleKeyPress)
-    return () => window.removeEventListener('keydown', handleKeyPress)
-  }, [eventIndex])
-
-    return (
-    <div className='relative'>
-        <div className='overflow-hidden'>
-        <div className="flex space-x-8">
-          {eventsList.map((event, index) => (
-            <ScrollReveal key={index} direction="up" delay={index * 0.2}>
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 min-w-[300px] h-full">
-                <CardHeader>
-                  <div className="flex items-center space-x-2 text-teal-600 mb-2">
-                    <CalendarDays className="h-5 w-5" />
-                    <span className="font-medium">{event.date}</span>
-                  </div>
-                  <CardTitle className="text-xl">{event.title}</CardTitle>
-                  <div className="flex items-center space-x-2 text-gray-500">
-                    <MapPin className="h-4 w-4" />
-                    <span className="text-sm">{event.location}</span>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-600 mb-4">
-                    {event.description}
-                  </CardDescription>
-                  <MagneticButton className="w-full bg-teal-600 hover:bg-teal-700 text-white py-2 px-4 rounded-lg font-medium transition-colors">
-                    Learn More
-                  </MagneticButton>
-                </CardContent>
-              </Card>
-            </ScrollReveal>
-          ))}
+  return (
+    <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <Tabs defaultValue="upcoming" className="w-full">
+            <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-12">
+              <TabsTrigger value="upcoming">Upcoming Events</TabsTrigger>
+              <TabsTrigger value="past">Past Events</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="upcoming">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {eventsData.upcomingEvents.map((event, index) => (
+                  <Card key={index} className="border-0 shadow-xl hover:shadow-2xl transition-shadow overflow-hidden">
+                    <div className="relative h-48">
+                      <Image 
+                        src={event.image}
+                        alt={event.title}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute top-4 right-4">
+                        <Badge variant="outline" className="bg-white/90 text-gray-800">
+                          {event.type}
+                        </Badge>
+                      </div>
+                    </div>
+                    
+                    <CardHeader>
+                      <CardTitle className="text-xl">{event.title}</CardTitle>
+                      <div className="space-y-2 text-sm text-gray-600">
+                        <div className="flex items-center space-x-2">
+                          <CalendarDays className="h-4 w-4" />
+                          <span>{event.date}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Clock className="h-4 w-4" />
+                          <span>{event.time}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <MapPin className="h-4 w-4" />
+                          <span>{event.location}</span>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    
+                    <CardContent>
+                      <CardDescription className="text-gray-700 mb-4">
+                        {event.description}
+                      </CardDescription>
+                                     
+                      <div className="mb-4">
+                        <h4 className="font-semibold text-gray-900 mb-2">Event Features:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {event.features.map((feature, idx) => (
+                            <Badge key={idx} variant="outline" className="text-xs">
+                              {feature}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <Button className="w-full bg-teal-600 hover:bg-teal-700">
+                        View Announcement
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="past">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {eventsData.pastEvents.map((event, index) => (
+                  <Card key={index} className="border-0 shadow-lg">
+                    <CardHeader>
+                      <CardTitle className="text-lg">{event.title}</CardTitle>
+                      <div className="text-sm text-gray-600">
+                        <div className="flex items-center space-x-2 mb-1">
+                          <CalendarDays className="h-4 w-4" />
+                          <span>{event.date}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <MapPin className="h-4 w-4" />
+                          <span>{event.location}</span>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="mb-4">
+                        <div className="text-2xl font-bold text-teal-600">{event.attendees}</div>
+                        <div className="text-sm text-gray-500">attendees</div>
+                      </div>
+                      <CardDescription className="text-gray-700">
+                        {event.highlights}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
-      </div>
-      
-      {/* Navigation buttons and indicators */}
-
-      <div className="flex justify-center items-center space-x-4 mt-8">
-        <button
-          onClick={prevEvent}
-          disabled={eventIndex === 0}
-          className="p-3 rounded-full bg-teal-600 text-white hover:bg-teal-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-110"
-          aria-label="Previous event"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        
-        <div className="flex space-x-2">
-          {eventsList.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setEventIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                index === eventIndex ? 'bg-teal-600' : 'bg-gray-300 hover:bg-gray-400'
-              }`}
-              aria-label={`Go to event ${index + 1}`}
-            />
-          ))}
-        </div>
-        
-        <button
-          onClick={nextEvent}
-          disabled={eventIndex >= eventsList.length - Math.floor(window.innerWidth / 320)} // Calcualtes how many cards can fit on screen at one time and length of eventsList
-          className="p-3 rounded-full bg-teal-600 text-white hover:bg-teal-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 transform hover:scale-110"
-          aria-label="Next event"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
-      </div>
-    </div>
-        
-    );
+      </section>
+  );
 }

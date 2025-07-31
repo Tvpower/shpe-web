@@ -13,7 +13,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { AnimatedCounter } from "@/components/ui/animated-counter"
-import { CalendarDays, Users, Trophy, GraduationCap, MapPin, Mail, Phone, School, BookOpen, Briefcase } from "lucide-react"
+import { CalendarDays, Users, Trophy, GraduationCap, MapPin, Mail, Phone, Clock, School, BookOpen, Briefcase } from "lucide-react"
 import { 
   ParallaxText, 
   ScrollReveal, 
@@ -24,6 +24,7 @@ import {
   HorizontalScroll 
 } from "@/components/smooth-scroll"
 import leadership from "@/app/leadership/leadershipData" // Assuming you have a leadership data file
+import eventsData from "./events/eventsList"
 
 export default function SHPELanding() {
   const [rotation, setRotation] = useState(0)
@@ -65,6 +66,7 @@ export default function SHPELanding() {
   ]
 
   const firstThreeLeadership = leadership.slice(0, 3);
+  const firstTwoEvents = eventsData.upcomingEvents.slice(0, 2);
   
   return (
     <div className="min-h-screen">
@@ -414,7 +416,77 @@ export default function SHPELanding() {
             </div>
           </ScrollReveal>
           
-          <EventsSection />
+          <div className='relative'>
+            <div className='overflow-hidden'>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {firstTwoEvents.map((event, index) => (
+                  <Card key={index} className="border-0 shadow-xl hover:shadow-2xl transition-shadow overflow-hidden">
+                    <div className="relative h-48">
+                      <Image 
+                        src={event.image}
+                        alt={event.title}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute top-4 right-4">
+                        <Badge variant="outline" className="bg-white/90 text-gray-800">
+                          {event.type}
+                        </Badge>
+                      </div>
+                    </div>
+                    
+                    <CardHeader>
+                      <CardTitle className="text-xl">{event.title}</CardTitle>
+                      <div className="space-y-2 text-sm text-gray-600">
+                        <div className="flex items-center space-x-2">
+                          <CalendarDays className="h-4 w-4" />
+                          <span>{event.date}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Clock className="h-4 w-4" />
+                          <span>{event.time}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <MapPin className="h-4 w-4" />
+                          <span>{event.location}</span>
+                        </div>
+                      </div>
+                    </CardHeader>
+                    
+                    <CardContent>
+                      <CardDescription className="text-gray-700 mb-4">
+                        {event.description}
+                      </CardDescription>
+                                     
+                      <div className="mb-4">
+                        <h4 className="font-semibold text-gray-900 mb-2">Event Features:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {event.features.map((feature, idx) => (
+                            <Badge key={idx} variant="outline" className="text-xs">
+                              {feature}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <Button className="w-full bg-teal-600 hover:bg-teal-700">
+                        View Announcement
+                      </Button>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+            <ScrollReveal direction="up" delay={0.5}>
+              <div className="text-center mt-12">
+                <Link href="/events">
+                  <Button className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-lg font-semibold inline-flex items-center gap-2 transition-all duration-300">
+                    View All Events
+                  </Button>
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
