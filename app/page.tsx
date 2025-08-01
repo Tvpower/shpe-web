@@ -5,23 +5,19 @@ import Image from "next/image"
 import Link from "next/link"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
-import EventsSection from "@/components/eventsSection"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { AnimatedCounter } from "@/components/ui/animated-counter"
-import { CalendarDays, Users, Trophy, GraduationCap, MapPin, Mail, Phone, Clock, School, BookOpen, Briefcase } from "lucide-react"
+import { CalendarDays, Users, Trophy, MapPin, Clock, School, Briefcase } from "lucide-react"
 import { 
   ParallaxText, 
   ScrollReveal, 
   FloatingText, 
   MagneticButton, 
   StaggerText, 
-  ScrollProgress,
-  HorizontalScroll 
+  ScrollProgress, 
 } from "@/components/smooth-scroll"
 import leadership from "@/app/leadership/leadershipData" // Assuming you have a leadership data file
 import eventsData from "./events/eventsList"

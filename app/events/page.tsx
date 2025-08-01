@@ -6,13 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { 
-  CalendarDays, 
-  MapPin, 
-  Clock, 
   Users, 
-  Ticket,
-  Camera,
-  Award,
   Network,
   BookOpen,
   Briefcase
