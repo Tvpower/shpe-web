@@ -158,9 +158,6 @@ export default function SHPELanding() {
 
       {/* About Section */}
       <section id="about" className="py-20 bg-white relative overflow-hidden">
-        <ParallaxText speed={-0.3} className="absolute top-10 left-0 w-full">
-          <FloatingText text="EXCELLENCE • INNOVATION • LEADERSHIP •" className="text-gray-100/20" />
-        </ParallaxText>
         
         <div className="container mx-auto px-6 relative z-10">
           <ScrollReveal direction="up">
@@ -268,9 +265,6 @@ export default function SHPELanding() {
 
       {/* Statistics Section */}
       <section className="py-20 bg-teal-50 relative overflow-hidden">
-        <ParallaxText speed={-0.2} className="absolute top-0 left-0 w-full opacity-10">
-          <FloatingText text="STATISTICS • DATA • GROWTH • SUCCESS •" />
-        </ParallaxText>
         
         <div className="container mx-auto px-6 relative z-10">
           <ScrollReveal direction="up">
@@ -306,8 +300,6 @@ export default function SHPELanding() {
 
       {/* Programs Section */}
       <section id="programs" className="py-20 bg-white relative overflow-hidden">
-        <FloatingText text="PROGRAMS • SUCCESS • INNOVATION •" className="absolute top-20 opacity-5" speed={0.3} />
-        
         <div className="container mx-auto px-6 relative z-10">
           <ScrollReveal direction="up">
             <div className="text-center mb-16">
@@ -339,6 +331,52 @@ export default function SHPELanding() {
                 </Card>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SHPEtinas Section */}
+      <section id="shpetinas" className="py-20 bg-pink-50 relative overflow-hidden">
+        <div className="container mx-auto px-6 relative z-10">
+          <ScrollReveal direction="up">
+            <div className="text-center mb-16">
+              <StaggerText 
+                text="SHPEtinas" 
+                className="text-4xl font-bold text-gray-900 mb-4 justify-center"
+              />
+              <ScrollReveal direction="up" delay={0.3}>
+                <p className="text-xl text-gray-600">Igniting Latinas in STEM</p>
+              </ScrollReveal>
+            </div>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <ScrollReveal direction="right" delay={0.2}>
+              <div>
+                <h3 className="text-2xl font-semibold mb-6">About</h3>
+                <p className="text-gray-700 mb-6">
+                  Our sister chapter acts as a support group for SHPE members, providing mentorship, mindful practices, and 
+                  a community that intends to uplift underrepresented groups in STEM.
+                </p>
+                <a href="https://discord.gg/aTKeebky" target="_blank" rel="noopener noreferrer">
+                  <MagneticButton className="bg-pink-500 hover:bg-pink-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Join SHPEtinas!
+                  </MagneticButton>
+                </a>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal direction="left" delay={0.4}>
+              <div className="relative">
+                <ParallaxText speed={0.2}>
+                  <Image 
+                    src="/shpetinas-logo.png"
+                    alt="SHPEtinas Logo with tagline 'Igniting Latinas in STEM'" 
+                    width={500} 
+                    height={400} 
+                    className="rounded-lg shadow-lg"
+                  />
+                </ParallaxText>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
