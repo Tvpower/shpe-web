@@ -13,8 +13,6 @@ import {
   Lightbulb,
   Heart,
   Globe,
-  Rocket,
-  Target
 } from "lucide-react"
 
 export default function ProgramsPage() {

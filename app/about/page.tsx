@@ -2,38 +2,9 @@ import Image from "next/image"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { AnimatedCounter } from "@/components/ui/animated-counter"
-import { Calendar, Users, Trophy, Target, Heart, Lightbulb, School, MapPin } from "lucide-react"
+import { Users, Target, Heart, Lightbulb, School, MapPin } from "lucide-react"
 
 export default function AboutPage() {
-  const timeline = [
-    {
-      year: "1974",
-      title: "SHPE Founded",
-      description: "Established to promote Hispanic excellence in engineering and science."
-    },
-    {
-      year: "1980s",
-      title: "National Expansion",
-      description: "Chapters established across universities and professional communities."
-    },
-    {
-      year: "1990s",
-      title: "Corporate Partnerships",
-      description: "Strategic alliances formed with major engineering companies."
-    },
-    {
-      year: "2000s",
-      title: "Digital Transformation",
-      description: "Online platforms launched to connect members globally."
-    },
-    {
-      year: "2020s",
-      title: "Innovation Focus",
-      description: "Emphasis on emerging technologies and entrepreneurship."
-    }
-  ]
 
   const values = [
     {
