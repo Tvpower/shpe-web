@@ -15,7 +15,7 @@ export default function Header({ variant = 'page' }: HeaderProps) {
 
   const navItems = [
     { href: "/about", label: "About" },
-    { href: "/programs", label: "Programs" },
+    
     { href: "/events", label: "Events" },
     { href: "/leadership", label: "Leadership" }
   ]
