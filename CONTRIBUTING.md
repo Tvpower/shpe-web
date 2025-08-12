@@ -36,3 +36,19 @@ To start the development server, type `npm run dev` and navigate to [`http://loc
    iii. If applicable, any link(s) to the issue/s that was resolved.
    iv. Any screenshots so that the reviewer(s) and team can understand where in the website you made your change.
 
+## Issues
+If you have any ideas on what you would like to add to the site or detect any bugs/errors, go to Issues → New Issue.
+There, you can add feedback on what you think should be done.
+When filling out your issue, please include the following:
+1. Title: A descriptive title giving an overview on your issue.
+2. Description: A brief and thorough description of what you would like to do and/or what you found wrong (2-3 sentences suggested)
+3. Label: On the right side of the description box, under Labels, choose a label that best describes what kind of issue you are writing.
+   Below is a list of the types of labels you could choose from.
+   i. Bug: If something is not working and/or giving incorrect/falsy output
+   ii. Documentation: If you have any suggestions on what could be done with the documentation of this Github Repo and/or the site.
+   iii. Enhancement: If you have an idea on a feature(s) that could give the site a better user experience.
+   iv. Question: If you are stuck or unclear with anything on the documentation and/or the source code.
+   v. Blank issue: Create an issue from scratch; if your issue does not necessarily belong to the former four labels.
+
+When you are done filling out your issue, press Create below the description box, and the web committee leaders will review your issue.
+
